@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "sonner"; // <-- Import Toaster
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <link rel="icon" href="/favicon.png" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
@@ -28,7 +31,7 @@ export default function RootLayout({
             <div className="flex-1">{children}</div>
             <Footer />
           </div>
-          <Toaster richColors position="top-right" /> {/* <-- Toaster added here */}
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>
