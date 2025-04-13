@@ -1,67 +1,60 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner"; // <-- sonner import
+import { database, ref, set } from "../lib/firebase"; // adjust path accordingly
 
 export default function Contact() {
-  const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      })
-      setFormData({ name: "", email: "", message: "" })
-      setIsSubmitting(false)
-    }, 1500)
+    try {
+      const formRef = ref(database, "messages/" + Date.now());
+      await set(formRef, formData);
 
-    // In the future, this will connect to Firebase
-    // const { name, email, message } = formData
-    // try {
-    //   await addDoc(collection(db, "messages"), {
-    //     name,
-    //     email,
-    //     message,
-    //     createdAt: new Date(),
-    //   })
-    //   toast({
-    //     title: "Message sent!",
-    //     description: "Thank you for your message. I'll get back to you soon.",
-    //   })
-    //   setFormData({ name: "", email: "", message: "" })
-    // } catch (error) {
-    //   toast({
-    //     title: "Error",
-    //     description: "There was an error sending your message. Please try again.",
-    //     variant: "destructive",
-    //   })
-    //   console.error("Error sending message:", error)
-    // } finally {
-    //   setIsSubmitting(false)
-    // }
-  }
+      toast.success("Message sent successfully!", {
+        description: "Thanks for reaching out. I’ll get back to you soon.",
+        style: {
+          backgroundColor: "#333", // Dark background
+          color: "#fff", // White text
+          borderRadius: "8px", // Optional: rounded corners
+          padding: "12px", // Add padding for better spacing
+        },
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message", {
+        description: "There was a problem sending your message. Please try again later.",
+        style: {
+          backgroundColor: "#333", // Dark background
+          color: "#fff", // White text
+          borderRadius: "8px", // Optional: rounded corners
+          padding: "12px", // Add padding for better spacing
+        },
+      });
+      console.error("Firebase error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 md:py-28 w-full bg-muted/50">
@@ -152,6 +145,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

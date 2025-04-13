@@ -14,7 +14,7 @@ const platforms = [
     username: "basic_spark_55",
     rank: "1★",
     link: "https://www.codechef.com/users/basic_spark_55",
-    image: "/codechef.png", // Replace with actual image path or use a placeholder
+    image: "/codechef.png",
     description: "Solved 1000+ problems, participated in contests, and achieved 1-star rating.",
   },
   {
@@ -24,7 +24,7 @@ const platforms = [
     rank: "Bronze Badge in Problem Solving",
     link: "https://www.hackerrank.com/profile/adityatallare797",
     image: "/hackerrank.png",
-    description: "Earned gold badges in Problem Solving and Java. 50+ problems solved.",
+    description: "Earned Bronze badges in Problem Solving and Java. 50+ problems solved.",
   },
   {
     id: 3,

@@ -26,7 +26,7 @@ const About = () => {
       institution: "Godavari College of Engineering and Polytechnic",
       period: "2021 - 2024",
       description:
-        "Pursuing my degree while building strong skills in application development and modern web technologies.",
+        "Focused on application development, web technologies, and core programming through practical, project-based learning.",
     },
   ]
 

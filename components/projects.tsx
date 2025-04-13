@@ -15,7 +15,7 @@ const projects = [
       "EcoConnect is a sustainability-focused web app that helps users calculate their carbon footprint, get real-time eco-tips, track weather, and connect with a green-minded community.",
     image: "/eco.png?height=400&width=600",
     technologies: ["React", "Node.js", "Tailwind CSS", "Firebase", "OpenWeatherMap API", "Geolocation API"],
-    demoUrl: "#",
+    demoUrl: "https://ecoconnectnow.netlify.app/",
     githubUrl: "https://github.com/Aditya-tallare/Ecoconnect",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     description: "A productivity app for managing College Events and team collaboration with real-time updates.",
     image: "/event.jpg?height=200&width=600",
     technologies: ["Java", "XML", "Firebase", "Android Studio"],
-    demoUrl: "#",
+    demoUrl: "",
     githubUrl: "https://github.com/Aditya-tallare/IdeaEvent",
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     title: "AI-Powered Sign Language Translator",
     description: "Real-time translator using AI and Computer Vision to convert sign language into text and speech.",
     image: "/hand.png?height=400&width=600",
-    technologies: ["TensorFlow", "OpenCV", "MediaPipe", "Google TTS", "Google Teachable"],
+    technologies: ["TensorFlow", "OpenCV", "Google Teachable"],
     demoUrl: "#",
     githubUrl: "https://github.com/Aditya-tallare/AI-Powered-Sign-Language-Translator",
   },
@@ -41,9 +41,9 @@ const projects = [
     title: "Portfolio Website",
     description: "A personal portfolio website showcasing projects and skills with a modern design.",
     image: "/port.jpeg?height=400&width=600",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    technologies: ["React.js", "Tailwind CSS", "Framer Motion","Firebase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Aditya-tallare/Aditya-Portfolio",
   },
   // Add more if needed...
 ]

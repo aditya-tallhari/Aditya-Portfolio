@@ -1,45 +1,50 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
-    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/50" />
         <div className="absolute inset-0 opacity-30">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full bg-primary/20"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 200 + 50}px`,
-                height: `${Math.random() * 200 + 50}px`,
-              }}
-              animate={{
-                x: [0, Math.random() * 100 - 50],
-                y: [0, Math.random() * 100 - 50],
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-            />
-          ))}
+          {Array.from({ length: 20 }).map((_, i) => {
+            const top = `${Math.random() * 100}%`;
+            const left = `${Math.random() * 100}%`;
+            const width = `${Math.random() * 200 + 50}px`;
+            const height = `${Math.random() * 200 + 50}px`;
+
+            return (
+              <motion.div
+                key={i}
+                className="absolute rounded-full bg-primary/20"
+                style={{ top, left, width, height }}
+                animate={{
+                  x: [0, Math.random() * 100 - 50],
+                  y: [0, Math.random() * 100 - 50],
+                }}
+                transition={{
+                  duration: Math.random() * 10 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -81,7 +86,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
             <a
-              href="/Resume _Aditya.docx" // Replace with the actual path to your resume file
+              href="/Resume _Aditya.docx"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,9 +98,11 @@ export default function Hero() {
               variant="outline"
               size="lg"
               className="rounded-full px-8"
-              onClick={() => {
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Contact Me
             </Button>
@@ -103,6 +110,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
