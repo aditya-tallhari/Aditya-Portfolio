@@ -56,7 +56,7 @@ const About = () => {
             <div className="relative">
               <div className="relative w-full aspect-square max-w-md mx-auto md:mx-0 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/ph.jpg?height=600&width=600"
+                  src="/me.png?height=600&width=600"
                   alt="Aditya"
                   width={600}
                   height={600}
