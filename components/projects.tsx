@@ -15,8 +15,8 @@ const projects = [
       "EcoConnect is a sustainability-focused web app that helps users calculate their carbon footprint, get real-time eco-tips, track weather, and connect with a green-minded community.",
     image: "/eco.png?height=400&width=600",
     technologies: ["React", "Node.js", "Tailwind CSS", "Firebase", "OpenWeatherMap API", "Geolocation API"],
-    demoUrl: "https://ecoconnectnow.netlify.app/",
-    githubUrl: "https://github.com/Aditya-tallare/Ecoconnect",
+    demoUrl: "",
+    githubUrl: "https://github.com/Aditya-tallhari/",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const projects = [
     image: "/event.jpg?height=200&width=600",
     technologies: ["Java", "XML", "Firebase", "Android Studio"],
     demoUrl: "",
-    githubUrl: "https://github.com/Aditya-tallare/IdeaEvent",
+    githubUrl: "https://github.com/Aditya-tallhari/IdeaEvent",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projects = [
     image: "/hand.png?height=400&width=600",
     technologies: ["TensorFlow", "OpenCV", "Google Teachable"],
     demoUrl: "#",
-    githubUrl: "https://github.com/Aditya-tallare/AI-Powered-Sign-Language-Translator",
+    githubUrl: "https://github.com/Aditya-tallhari/AI-Powered-Sign-Language-Translator",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const projects = [
     image: "/port.jpeg?height=400&width=600",
     technologies: ["React.js", "Tailwind CSS", "Framer Motion","Firebase"],
     demoUrl: "#",
-    githubUrl: "https://github.com/Aditya-tallare/Aditya-Portfolio",
+    githubUrl: "https://github.com/Aditya-tallhari/Aditya-Portfolio",
   },
   // Add more if needed...
 ]

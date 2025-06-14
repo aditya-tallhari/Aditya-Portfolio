@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Right: Social Icons */}
         <div className="flex gap-6">
           <Link
-            href="https://github.com/Aditya-tallare"
+            href="https://github.com/Aditya-tallhari"
             target="_blank"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
