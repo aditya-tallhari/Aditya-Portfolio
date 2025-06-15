@@ -86,7 +86,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
             <a
-              href="/Resume _Aditya.docx"
+              href="/Resume_Aditya.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
